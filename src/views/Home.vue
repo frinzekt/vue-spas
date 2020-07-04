@@ -38,21 +38,10 @@
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import db from "../db";
 export default {
   name: "home",
-  data: () => {
-    return {
-      user: null
-    };
-  },
-  async mounted() {
-    const snapshot = await db
-      .collection("users")
-      .doc("aYg9eL2aarjgQIbe7Xkp")
-      .get();
-
-    this.user = snapshot.data().name;
+  props:{
+user:String
   },
   components: { FontAwesomeIcon }
 };
